@@ -1,0 +1,20 @@
+class Solution {
+    public boolean solution(String s) {
+        boolean answer = true;
+        
+        //길이가 1이상 8이하
+        int len = s.length();
+        //길이가 4 혹은 6 -> 4나 6이 아닌것을 배제시킴
+        if(len !=4 && len !=6){
+            return false;
+        }
+        //문자열 길이만큼 반복문 돌려서 확인
+        for(int i=0; i<len; i++){
+
+            if(s.charAt(i)<'0' || s.charAt(i)>'9'){
+                return false;
+            }
+        }
+        return answer;
+    }
+}
