@@ -1,0 +1,11 @@
+import java.util.*;
+class Solution {
+    public String solution(String s) {
+        //String.toCharArray() -> 문자열을 한글자씩 쪼개서 char형 타입의 배열에 넣어줌
+        char[] charArr = s.toCharArray();
+        Arrays.sort(charArr);
+        StringBuilder sb = new StringBuilder(new String(charArr,0,charArr.length));
+        
+        return sb.reverse().toString();
+    }
+}
