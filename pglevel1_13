@@ -1,0 +1,21 @@
+class Solution {
+    public String solution(String s) {
+        String answer = "";
+        String[] str = s.split("");
+        int idx = 0; //공백을 기준으로 인덱스 판단할 변수
+        
+        for(int i=0; i<str.length; i++){
+            if(str[i].equals(" ")){ //공백
+                idx = 0;
+            }else if(idx%2==0){ //짝수
+                str[i] = str[i].toUpperCase(); //대문자로 변경
+                idx++;
+            }else if(idx%2!=0){ //홀수
+                str[i] = str[i].toLowerCase(); //소문자로 변경
+                idx++;
+            }
+            answer += str[i];
+        }       
+        return answer;
+    }
+}
