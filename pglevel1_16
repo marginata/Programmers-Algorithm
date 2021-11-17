@@ -1,0 +1,15 @@
+class Solution {
+    public int[] solution(long n) {
+        //배열에 넣기 위해서 String형변환
+        String str = "";
+        str += n;
+        char[] arr = str.toCharArray(); //char형 배열에 넣음
+        int[] answer = new int[arr.length]; 
+        
+        for(int i=0; i<arr.length; i++){
+            answer[i] += Integer.parseInt(arr[arr.length-1-i]+""); //parseInt는 String타입을 int형으로 변환하는 메서드이기 때문에 char형 배열을 string형으로 변환하기 위해 빈문자열 "" 더함
+        }
+        
+        return answer;
+    }
+}
