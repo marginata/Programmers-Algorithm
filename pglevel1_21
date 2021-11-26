@@ -1,0 +1,17 @@
+class Solution {
+    public int[] solution(int n, int m) {
+        int[] answer = new int[2];
+        answer[0] = gcd(n,m); //최대공약수
+        answer[1] = n*m / answer[0]; //최소공배수
+        return answer;
+    }
+    //유클리드 호제법: A>B일때 A,B의 최대공약수는 A를 B로 나눈 나머지 r이 있을 때, B와 r의 최대공약수가 같다.
+    static int gcd(int a, int b){
+        while(b!=0){
+            int r = a%b;
+            a=b;
+            b=r;
+        }
+        return a;
+    }
+}
